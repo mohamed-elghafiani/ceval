@@ -37,7 +37,7 @@ def ceval():
         # Add a button to save the response and score
         if st.button("Submit my rating"):
             # Save the response and score to a dataset
-            save_to_dataset(response, score)
+            save_to_dataset(problem, solution, response, score)
 
 
 def save_to_dataset(problem, solution, response, score):
