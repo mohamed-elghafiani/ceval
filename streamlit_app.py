@@ -7,16 +7,14 @@ from ceval import generate_response
 def ceval():
     # st.title("Text Area Form")
 
-    # Create a form using the st.form context manager
-    with st.form("text_area_form"):
-        # Add the first text area to the form
-        problem = st.text_area("Enter the problem", key="text_area_1")
+    # Add the first text area to the form
+    problem = st.text_area("Enter the problem", key="text_area_1")
 
-        # Add the second text area to the form
-        solution = st.text_area("Enter your proposed solution", key="text_area_2")
+    # Add the second text area to the form
+    solution = st.text_area("Enter your proposed solution", key="text_area_2")
 
-        # Add a submit button to the form
-        submit_button = st.form_submit_button("Submit")
+    # Add a submit button to the form
+    submit_button = st.button("Submit")
 
     # Check if the form is submitted
     if submit_button:
