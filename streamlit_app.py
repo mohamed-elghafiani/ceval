@@ -1,7 +1,8 @@
 import streamlit as st
 # import uuid
+import shelve
+import hashlib
 from ceval import generate_response
-# from evaluation import evaluate_idea
 
 
 def ceval():
@@ -39,8 +40,17 @@ def ceval():
             save_to_dataset(response, score)
 
 
-def save_to_dataset(response, score):
-    pass
+def save_to_dataset(problem, solution, response, score):
+    h = hashlib.new('sha256')#sha256 can be replaced with diffrent algorithms
+    h.update(f'{problem} {solution}'.encode()) #give a encoded string. Makes the String to the Hash 
+    id = h.hexdigest() # id is the hash of the problem and solution
+    with shelve.open("evaluations_ratings", writeback=True) as threads_shelf:
+        threads_shelf[id] = {
+            "problem": problem,
+            "solution": solution,
+            "response": response,
+            "score": score
+        }
 
 
 def chat_app(role):
