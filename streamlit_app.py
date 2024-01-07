@@ -4,7 +4,7 @@ from ceval import generate_response
 # from evaluation import evaluate_idea
 
 
-def prob_sol():
+def ceval():
     # st.title("Text Area Form")
 
     # Create a form using the st.form context manager
@@ -32,8 +32,18 @@ def prob_sol():
         # st.write("Evaluation of your idea: ", prompt)
         st.write("Evaluation of your idea: ", generate_response(prompt, "abc456", "med"))
 
+        # Add a scoring field
+        score = st.slider("Score (0-10)", 0, 10, 5)  # Initial value set to 5
 
-def ceval(role):
+        # Save the response and score to a dataset
+        save_to_dataset(response, score)
+
+
+def save_to_dataset(response, score):
+    pass
+
+
+def chat_app(role):
     st.title(f"Ceval - The experts companion")
 
     # Clear chat history when the role is changed
@@ -78,7 +88,7 @@ def main():
     st.sidebar.markdown("Since the construction industry is the largest user of coal (used to fire bricks) in the country and a signficant cause of air polution, it also lead to loss of fertile topsoil. Therfore, I came up with an ingenious solution to this pertinent problem by creating bricks made from foundary dust and waste plastic.")
     st.sidebar.markdown("Solution:")
     st.sidebar.markdown("To overcome this ecological problem we came up with the bricks, made from foundary dust and waste plastic. There is no use of water in the making of these bricks. Also more water is saved during the construction process, as the walls built with these bricks don't need to be cured with water. Also the best part of this idea is that while 70 percent of the total sand can be reused, the other 30 percent, in the form of foundary dust is too fine to be used again. Also, with enhanced technology we evolve this idea in making interlocking bricks, which essentialy works like Lego blocks.")
-    prob_sol()
+    ceval()
     
     # elif choice == "User Guide":
     #     user_guide()
