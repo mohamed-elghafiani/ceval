@@ -63,24 +63,25 @@ def user_guide():
 
 
 def main():
-    PAGES = {
-        "User Guide": user_guide,
-        "Ceval": prob_sol,
-    }
+    # PAGES = {
+    #     "User Guide": user_guide,
+    #     "Ceval": prob_sol,
+    # }
 
-    st.sidebar.title("Navigation")
-    choice = st.sidebar.selectbox("Select Feature", list(PAGES.keys()))
+    st.sidebar.title("Ceval - Circular ideas evaluator")
+    # choice = st.sidebar.selectbox("Select Feature", list(PAGES.keys()))
 
-    print(choice)
-    if choice == "Ceval":
-        st.sidebar.markdown("### Examples of Problem/solution pair:")
-        st.sidebar.markdown("Problem:")
-        st.sidebar.markdown("Since the construction industry is the largest user of coal (used to fire bricks) in the country and a signficant cause of air polution, it also lead to loss of fertile topsoil. Therfore, I came up with an ingenious solution to this pertinent problem by creating bricks made from foundary dust and waste plastic.")
-        st.sidebar.markdown("Solution:")
-        st.sidebar.markdown("To overcome this ecological problem we came up with the bricks, made from foundary dust and waste plastic. There is no use of water in the making of these bricks. Also more water is saved during the construction process, as the walls built with these bricks don't need to be cured with water. Also the best part of this idea is that while 70 percent of the total sand can be reused, the other 30 percent, in the form of foundary dust is too fine to be used again. Also, with enhanced technology we evolve this idea in making interlocking bricks, which essentialy works like Lego blocks.")
-        prob_sol()
-    elif choice == "User Guide":
-        user_guide()
+    # print(choice)
+    # if choice == "Ceval":
+    st.sidebar.markdown("### Examples of Problem/solution pair:")
+    st.sidebar.markdown("Problem:")
+    st.sidebar.markdown("Since the construction industry is the largest user of coal (used to fire bricks) in the country and a signficant cause of air polution, it also lead to loss of fertile topsoil. Therfore, I came up with an ingenious solution to this pertinent problem by creating bricks made from foundary dust and waste plastic.")
+    st.sidebar.markdown("Solution:")
+    st.sidebar.markdown("To overcome this ecological problem we came up with the bricks, made from foundary dust and waste plastic. There is no use of water in the making of these bricks. Also more water is saved during the construction process, as the walls built with these bricks don't need to be cured with water. Also the best part of this idea is that while 70 percent of the total sand can be reused, the other 30 percent, in the form of foundary dust is too fine to be used again. Also, with enhanced technology we evolve this idea in making interlocking bricks, which essentialy works like Lego blocks.")
+    prob_sol()
+    
+    # elif choice == "User Guide":
+    #     user_guide()
 
 
 if __name__ == "__main__":
