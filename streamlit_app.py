@@ -35,8 +35,10 @@ def ceval():
         # Add a scoring field
         score = st.slider("Score (0-10)", 0, 10, 5)  # Initial value set to 5
 
-        # Save the response and score to a dataset
-        save_to_dataset(response, score)
+        # Add a button to save the response and score
+        if st.button("Submit my rating"):
+            # Save the response and score to a dataset
+            save_to_dataset(response, score)
 
 
 def save_to_dataset(response, score):
