@@ -29,8 +29,8 @@ def ceval():
         Solution:
         {solution.strip()}
         """ 
-        # st.write("Evaluation of your idea: ", prompt)
-        st.write("Evaluation of your idea: ", generate_response(prompt, "abc456", "med"))
+        response = generate_response(prompt, "abc456", "med")
+        st.write("Evaluation of your idea: ", response)
 
         # Add a scoring field
         score = st.slider("Score (0-10)", 0, 10, 5)  # Initial value set to 5
