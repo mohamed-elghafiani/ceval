@@ -1,7 +1,7 @@
 import streamlit as st
-import uuid
+# import uuid
 from ceval import generate_response
-from evaluation import evaluate_idea
+# from evaluation import evaluate_idea
 
 
 def prob_sol():
