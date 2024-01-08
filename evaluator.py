@@ -136,11 +136,9 @@ You will be provided with three different evaluations for a circular economy bus
    - Review the three evaluations, each conducted based on criteria such as Maturity Stage, Market Potential, Feasibility, Scalability, Technological Innovation, and Adherence to Circular Economy Principles.
    - Examine the provided numerical scores and rationales for each criterion in all three evaluations.
 
-3. Final Holistic Score:
-   - Based on your analysis, assign a final holistic score on a scale of 1 to 10 for the circular economy business model solution.
-   - Provide a well-documented and justified assessment, highlighting key insights and considerations from the individual evaluations and the consolidated analysis.
-
-Note: Ensure that the final score and rationale are derived by averaging and synthesizing the information from the three evaluations to offer the most comprehensive and informed decision.
+3. Give an overall final Assessment:
+   - Based on your analysis, assign a final score on a scale of 1 to 10 for the each criteria.
+   - Use the insights and considerations from the individual evaluations and provide a final well-documented rationale and justified assessment.
 
 Evaluation Form (Answer by starting with
 "Rating:" and then give the explanation
@@ -153,30 +151,40 @@ problem = '' #problem here
 solution = '' #solution here
 
 def evaluator(problem, solution):
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-        {"role": "user", "content": prompt1 + '\n' + f"problem: {problem}" + '\n' + f"solution: {solution}"},
-        {"role": "user", "content": prompt2 + '\n' + f"problem: {problem}" + '\n' + f"solution: {solution}"},
-        {"role": "user", "content": prompt3 + '\n' + f"problem: {problem}" + '\n' + f"solution: {solution}"}
-        ]
-    )
+   completion = client.chat.completions.create(
+      model="gpt-3.5-turbo",
+      messages=[
+      {"role": "user", "content": prompt1 + '\n' + f"problem: {problem}" + '\n' + f"solution: {solution}"},
+      ]
+   )
+   eval1 = completion.choices[0].message.content #string containing response for prompt1
 
-    eval1 = completion.choices[0].message #string containing response for prompt1
-    eval2 = completion.choices[1].message
-    eval3 = completion.choices[2].message
-    
-    completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[
-      {
-        "role": "user",
-        "content": super_prompt + f'Here is the first evaluation:\n{eval1}' \
-        + f'Here is the second evaluation:\n{eval2}' + f'Here is the third evaluation:\n{eval3}'
-      },
-    ]
-    )
-    
-    finalEval = completion.choices[0].message
+   completion = client.chat.completions.create(
+      model="gpt-3.5-turbo",
+      messages=[
+      {"role": "user", "content": prompt2 + '\n' + f"problem: {problem}" + '\n' + f"solution: {solution}"},
+      ]
+   )
+   eval2 = completion.choices[0].message.content
 
-    return finalEval
+   completion = client.chat.completions.create(
+      model="gpt-3.5-turbo",
+      messages=[
+      {"role": "user", "content": prompt3 + '\n' + f"problem: {problem}" + '\n' + f"solution: {solution}"}
+      ]
+   )
+   eval3 = completion.choices[0].message.content
+
+   completion = client.chat.completions.create(
+   model="gpt-3.5-turbo",
+   messages=[
+   {
+   "role": "user",
+   "content": super_prompt + f'Here is the first evaluation:\n{eval1}' \
+   + f'Here is the second evaluation:\n{eval2}' + f'Here is the third evaluation:\n{eval3}'
+   },
+   ]
+   )
+   finalEval = completion.choices[0].message.content
+
+   return finalEval
