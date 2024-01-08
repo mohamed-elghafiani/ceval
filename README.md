@@ -1,4 +1,4 @@
-# Ceval
+# Ceval - [Demo](https://ceval-ai.streamlit.app/)
 
 Unlock the power of informed decision-making with Ceval, the advanced circular economy evaluator, seamlessly blending AI efficiency with human expertise to deliver reliable, structured assessments for sustainable solutions.
 
@@ -26,23 +26,79 @@ Ceval, our advanced generative AI tool, serves as a powerful ally in overcoming 
    While the tool excels at surfacing non-obvious insights, it acknowledges the irreplaceable value of human experience. Human experts contribute nuanced perspectives, drawing on their extensive experience and domain knowledge.
    This collaborative synergy ensures that Ceval evolves alongside human expertise, enhancing its adaptability and staying attuned to industry nuances. The tool's continuous improvement is a testament to its commitment to providing insightful evaluations that complement and augment human decision-making.
 
+## run the code locally:
+
+## Running the Circular Economy Evaluator Locally
+
+### Prerequisites
+
+1. **OpenAI API Key:**
+   - Ensure you have a valid OpenAI API key. You can obtain one by signing up on the [OpenAI platform](https://beta.openai.com/signup/).
+
+### Installation
+
+2. **Clone the Repository:**
+
+   - Open your terminal and run the following command to clone the repository:
+
+   ```bash
+    git clone https://github.com/mohamed-elghafiani/ceval.git
+   ```
+
+3. **Navigate to the Project Directory:**
+
+   - Change your working directory to the cloned repository:
+
+   ```bash
+    cd your-repo
+   ```
+
+4. **Install Dependencies:**
+   - Install the required Python packages by running:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+### Configuration
+
+5. **Set OpenAI API Key:**
+   - Create a file named `.env` in the project root directory.
+   - Open the `.env` file and add the following line, replacing `YOUR_OPENAI_API_KEY` with your actual OpenAI API key:
+     ```bash
+     OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+     ```
+
+### Run the Streamlit App
+
+6. **Run the Streamlit App:**
+   - Execute the following command to launch the Streamlit app:
+     ```bash
+     streamlit run streamlit_app.py
+     ```
+   - This will start a local server, and you can access the Circular Economy Evaluator in your web browser at [http://localhost:8501](http://localhost:8501).
+
+### Usage
+
+7. **Evaluate Circular Economy Solutions:**
+   - Once the app is running, you can interactively evaluate circular economy solutions using the provided interface.
+
 ## Meet the Team
 
 The development and success of Ceval are attributed to the collaborative efforts of a talented and dedicated team. Get to know the minds behind Ceval:
 
-- **[Your Name](Your LinkedIn Profile Link)**
+- **[Abby Brennan-Jones](https://www.linkedin.com/in/abby-brennan-jones-3164852a7/)**
 
-  - GitHub: [Your GitHub Profile Link](Your GitHub Profile Link)
+  - GitHub: [ybba123](https://github.com/ybba123)
 
-- **[Team Member 2's Name](Team Member 2's LinkedIn Profile Link)**
+- **[Mohamed El Ghafiani](https://www.linkedin.com/in/mohamed-el-ghafiani)**
 
-  - GitHub: [Team Member 2's GitHub Profile Link](Team Member 2's GitHub Profile Link)
+  - GitHub: [mohamed-elghafiani](https://github.com/mohamed-elghafiani)
 
-- **[Team Member 3's Name](Team Member 3's LinkedIn Profile Link)**
+- **[Rory Brennan-Jones](www.linkedin.com/in/rory-brennan-jones-89a548288)**
 
-  - GitHub: [Team Member 3's GitHub Profile Link](Team Member 3's GitHub Profile Link)
+  - GitHub: [RoryBrennan-Jones](https://github.com/RoryBrennan-Jones)
 
-- **[Team Member 4's Name](Team Member 4's LinkedIn Profile Link)**
-  - GitHub: [Team Member 3's GitHub Profile Link](Team Member 3's GitHub Profile Link)
+- **[Yuetong (Winnie) Zhou](www.linkedin.com/in/Yuetong-Winnie-Zhou-13b0882a9)**
+  - GitHub: [Yuetong-Winnie-Zhou](https://github.com/Yuetong-Winnie-Zhou)
 
 We appreciate the hard work and dedication of each team member in bringing Ceval to life.
