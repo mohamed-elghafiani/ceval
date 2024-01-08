@@ -3,6 +3,7 @@ import streamlit as st
 import shelve
 import hashlib
 from ceval import generate_response
+from evaluator import evaluator
 
 
 def ceval():
@@ -28,7 +29,7 @@ def ceval():
         Solution:
         {solution.strip()}
         """ 
-        response = generate_response(prompt, "abc456", "med")
+        response = evaluator(problem, solution)
         st.write("Evaluation of your idea: ", response)
 
         # Add a scoring field
